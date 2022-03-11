@@ -1,0 +1,15 @@
+.page__search {
+  padding: 4em;
+}
+
+.page__search-input-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__search-input-wrapper > h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 0;
+}
