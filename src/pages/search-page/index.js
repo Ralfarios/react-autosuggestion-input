@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { debounce } from "lodash";
+import { capitalize, debounce } from "lodash";
 
 import { CInputSearch } from "../../components";
 
@@ -91,11 +91,26 @@ function SearchPage() {
             <h3>
               {[
                 detailData?.type,
-                detailData?.attribute,
+                ...(detailData?.attribute
+                  ? [capitalize(detailData?.attribute)]
+                  : ""),
                 detailData?.race,
-                `${detailData?.atk}/${detailData.def}`,
+                ...(detailData?.atk && detailData?.def
+                  ? [`${detailData?.atk}/${detailData.def}`]
+                  : ""),
               ]?.join("・")}
             </h3>
+            <p>
+              {!detailData?.level
+                ? "N/A"
+                : Array(detailData?.level)
+                    .fill("star")
+                    .map((data, i) => (
+                      <i className="material-icons" key={i}>
+                        {data}
+                      </i>
+                    ))}
+            </p>
             <p>{detailData?.desc}</p>
           </div>
         </section>
