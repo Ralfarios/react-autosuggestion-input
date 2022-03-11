@@ -35,7 +35,7 @@ function SearchPage() {
       setData([]);
       setError("notFound");
     }
-  }, 1000);
+  }, 300);
 
   const handleSearch = useCallback(function ({ target }) {
     setError("");
