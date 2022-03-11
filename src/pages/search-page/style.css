@@ -13,3 +13,23 @@
   font-size: 3em;
   margin-top: 0;
 }
+
+.page__search-info {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  margin: 2em 0;
+  gap: 2em;
+}
+
+.page__search-info > a > img {
+  width: 100%;
+}
+
+.page__search-info-detail > h1 {
+  margin-top: 0;
+}
+
+.page__search-info-detail > h1 > span {
+  font-weight: 400;
+  font-size: 0.75em;
+}
